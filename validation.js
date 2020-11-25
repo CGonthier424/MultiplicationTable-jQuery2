@@ -234,12 +234,10 @@ if (isNaN(newvalue4) || newvalue4 < -100 || newvalue4 > 100) {
 var index=0;
 $("#newTabButton").click(function(){
 //dont create tab on improper inputs
-// flag check reference https://www.mathworks.com/matlabcentral/answers/170008-return-2-is-there-a-clean-way-to-exit-parent-function-from-a-nested-function
 var flag = true;
 if($('#forumInput').valid()){
   flag =false;
 }
-
 if(flag)
 return;
 
@@ -254,7 +252,7 @@ var c = Number(document.getElementById("minColumn").value);
 var d = Number(document.getElementById("maxColumn").value);
 
 // uses tab header values to create tab header on bbutton click
-$("#myTabs ul").append("<li><a href='#"+ index +"'> Tab" + index + " " + a + "," + b + "," + c + "," + d + "</a> <input type= 'checkbox' class=\"checkbox_check\" /> </li>");
+$("#myTabs ul").append("<li><a href='#"+ index +"'> Tab " + index + " " + a + "," + b + "," + c + "," + d + "</a> <input type= 'checkbox' class=\"checkbox_check\" /> </li>");
 //Div that pertains to the content of the tab
 $("#myTabs").append("<div id='" + index + "'>" + "</div>");
 //creatse tab Tabs
@@ -264,7 +262,7 @@ $("#myTabs").tabs("refresh");
 //set the active tab
 $("#myTabs").tabs("option", "active", -1 );
 
-//submit the for properly
+//submit the form properly
 if($("#maxColumnNumber").val()!='' && $("#minColumnNumber").val() !='' && $("#minRowNumber").val() !='' && $("maxRowNumber").val() !=''){
 $("#inputForm").submit();
 }
